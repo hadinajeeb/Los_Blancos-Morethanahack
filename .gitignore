@@ -1,0 +1,14 @@
+# match data and anything derived from it frame by frame: never commit
+data/
+work*/
+*.csv
+*.npz
+*.npy
+*.mp4
+# weights are published as release assets, not committed
+weights/*.pt
+# private packaging notes
+NOTES-packaging.md
+__pycache__/
+.venv/
+tests/cluster.env

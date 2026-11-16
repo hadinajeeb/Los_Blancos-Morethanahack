@@ -1,0 +1,24 @@
+{
+  "name": "v2",
+  "ball_source": "video",
+  "ball_ckpt": "weights/ball_r1.pt",
+  "ball_key": "video_first_xy",
+  "ball_amp": true,
+  "seq_ckpts": [
+    "weights/seq_v2_s2.pt",
+    "weights/seq_v2_s3.pt",
+    "weights/seq_v2_s5.pt",
+    "weights/seq_v2_s6.pt",
+    "weights/seq_v2_s7.pt"
+  ],
+  "seq_fps": 12.5,
+  "seq_chunk_s": 480.0,
+  "seq_overlap_s": 60.0,
+  "convention": 0,
+  "decode": {
+    "style": "pairmean32",
+    "c_ha": 4.0,
+    "c_d": 4.0
+  },
+  "dead_rules": "kickoff_formation"
+}

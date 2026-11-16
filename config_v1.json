@@ -1,0 +1,22 @@
+{
+  "name": "v1",
+  "ball_source": "video",
+  "ball_ckpt": "weights/ball_r1.pt",
+  "ball_key": "video_first_xy",
+  "ball_amp": true,
+  "seq_ckpts": [
+    "weights/seq_v1_s0.pt",
+    "weights/seq_v1_s1.pt",
+    "weights/seq_v1_s2.pt"
+  ],
+  "seq_fps": 12.5,
+  "seq_chunk_s": null,
+  "seq_overlap_s": 60.0,
+  "convention": 0,
+  "decode": {
+    "style": "pairmean64",
+    "c_ha": 4.0,
+    "c_d": 4.0
+  },
+  "dead_rules": "anchors_and_empty_tail"
+}

@@ -1,0 +1,27 @@
+[project]
+name = "mtah-possession"
+version = "0.2.0"
+description = "Frame-level ball possession (H/A/D) for More than a Hack 2027"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy==2.5.4",
+    "torch==2.11.0+cu128",
+    "av==19.0.2",
+]
+
+[project.optional-dependencies]
+# only for retraining (train/) and for the organisers' validator
+train = ["scipy", "pandas", "opencv-python-headless"]
+
+# The ball detector's default mode (bfloat16 autocast) was verified bit-for-bit only with this exact
+# PyTorch build, so the build comes from PyTorch's own index, not from PyPI (PyPI serves 2.11.0+cu130).
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
+
+[tool.uv]
+package = false
